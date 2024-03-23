@@ -42,7 +42,7 @@ ol {
   align-items: center;
   block-size: 100%;
   margin: auto;
-  color: #fff;
+  color: #FFF;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
@@ -61,6 +61,7 @@ ol {
   display: flex;
   flex-direction: column;
   align-self: flex-end;
+  width: 711px;
   gap: 16px;
 }
 
@@ -81,11 +82,17 @@ ol {
 .search-form {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 26px;
+}
+
+input {
+  width: 211px;
+  margin: 2.5px 14px 2.5px 0;
 }
 
 .search-form__fieldset {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 5px;
@@ -112,45 +119,113 @@ ol {
   font-weight: 400;
 }
 
-.search-form__label {
-  color: #FFF;
-  font-family: "Fira Sans Condensed";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  width: 51.402px;
-  margin-bottom: 5px;
+.search-form__fieldset-title:has(:focus-visible) {
+  border: 1px solid #FFF;
 }
 
-.search-form__label-text {
-  color: #FFF;
-  font-family: "Fira Sans Condensed";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label {
+  display: flex;
+  margin-bottom: 5px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.search-form__label:hover:has(.search-form__pseudo-checkbox) {
+  text-decoration: underline;
+  text-decoration-color: #FFF;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
 }
 
 .search-form__checkbox-list {
-  display: inline-flex;
-  flex-direction: row;
-  gap: 5px;
+  display: flex;
+  gap: 15px;
 }
 
 .search-form__pseudo-checkbox {
-  display: block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #FFF;
   inline-size: 19px;
   block-size: 19px;
+  margin-right: 5px;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.search-form__checkbox:active + .search-form__pseudo-checkbox::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  gap: 10px;
+  margin-bottom: 5px;
+  flex-shrink: 0;
   cursor: pointer;
+  border: 1px solid #FFF;
+  background-color: transparent;
+  color: #FFF;
+  font-family: "Fira Sans Condensed";
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.button:hover {
+  outline: none;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
+}
+
+.button:active {
+  outline: none;
+  text-decoration: none;
+  background-color: #545050;
+}
+
+button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
 }
 
 .search-form__submit-button {
+  width: 194px;
+  height: 34px;
+}
 
+.more-button {
+  width: 399px;
+  height: 34px;
 }
 
 .content-details {
@@ -194,13 +269,8 @@ ol {
   margin-bottom: 30px;
 }
 
-.cards-list-item-template {
-
-}
-
 .content__card-link {
   text-decoration: none;
-
 }
 
 .content__video-card {
@@ -229,10 +299,6 @@ ol {
 
 .content__video-card-description {
   color: #FFF;
-  font-family: "Fira Sans Condensed";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
   line-height: 16.2px; 
   width: 200px;
 }
@@ -245,3 +311,29 @@ ol {
   object-position: center;
 }
 
+.content__card-link:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
+}
+
+.content__video-card:hover {
+  text-decoration: underline;
+  text-decoration-color: #FFF;
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
+  cursor: pointer;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__card-link_current {
+  background-color: #545050;
+  display: block;
+  margin: 2px;
+}
