@@ -182,11 +182,13 @@ input {
   justify-content: center;
   align-items: center;
   align-self: flex-end;
+  margin-left: 2px;
   gap: 10px;
   margin-bottom: 5px;
   flex-shrink: 0;
   cursor: pointer;
   outline: 1px solid #FFF;
+  border: none;
   background-color: transparent;
   color: #FFF;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -196,7 +198,6 @@ input {
 }
 
 .button:hover {
-  outline: none;
   cursor: pointer;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -224,14 +225,14 @@ input {
 }
 
 .more-button {
-  inline-size: 399px;
+  inline-size: 396px;
   block-size: 34px;
 }
 
 .content-details {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 26px;
 }
 
@@ -245,7 +246,7 @@ input {
   font-weight: 700;
   line-height: 94%;
   text-transform: uppercase;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
 }
 
 .content__accent {
@@ -271,17 +272,17 @@ input {
 }
 
 .content__card-link {
+  display: block;
   text-decoration: none;
+  margin: 2px;
 }
 
 .content__card-link:focus {
   outline: none;
-  
 }
 
 .content__card-link:focus-visible {
   outline: 1px solid #FFF;
-  
 }
 
 .content__video-card {
